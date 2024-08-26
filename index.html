@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wonderful Lyon</title>
+    <link rel="shortcut icon" href="./assets/logo/logo-2.png" type="image/x-icon">
 <!--    for SEO -->
     <meta name="description" content="Lyon is a historic and vibranct French city. This city boasts not only charming historical architecture and rich 
 cultural heritage but also a highly livable environment and a dynamic modern urban atmosphere.">
-    
+    <meta name="keywords" content="Lyon, travel, France, historic city, cultural heritage, modern urban, livable city">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Fei">
+<!--    open graph  social sharing-->
+    <meta property="og:title" content="Wonderful Lyon - Discover the Charm of a Historic French City">
+    <meta property="og:description" content="Explore Lyon's rich cultural heritage, charming architecture, and vibrant modern atmosphere. Perfect for tourists and residents.">
+    <meta property="og:image" content="./assets/logo/logo-2.svg">
+    <meta property="og:url" content="http://192.168.10.2/wonderlyon.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wonderful Lyon - Historic and Modern French City">
+    <meta name="twitter:description" content="Discover the unique blend of history and modernity in Lyon, France. A city for culture lovers and urban explorers.">
+    <meta name="twitter:image" content="https://www.yourwebsite.com/images/lyon.jpg">
 <!--    link to external css-->
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -37,7 +50,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                 </li>
             </ul>
             <a href="#section-help">
-                <button class="btn btn-primary">Need Help</button>
+                <button class="btn btn-primary">Need Help ?</button>
             </a>
         </nav>
     </header>
@@ -103,7 +116,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
         <section aria-label="Recent Events Section" id="section-event">
             <div id="event-wrapper" class="container">
                 <h2 class="text-center mb-3">Recent <span class="highlight-gradient">Events</span></h2>
-                <div class="cards">
+                <div class="cards observe-slide-from-right">
                     <article class="card">
                         <div class="card-header mb-1">
                             <img src="./assets/events/The Péristyle Festival/23553350.jpg" alt="Image of The Péristyle Festival">
@@ -112,7 +125,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                             </p>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title mb-1">The Péristyle Festival <time class="event-date">16/07/2024
+                            <h3 class="card-title">The Péristyle Festival <time class="event-date">16/07/2024
                             </time></h3>
                             <div>
                                 <div class="text-end mb-1 card-price">$50</div>
@@ -131,7 +144,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                             </p>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title mb-1">WorldSkills Global<br>Competition Lyon 2024 <time class="event-date">10/09/2024
+                            <h3 class="card-title">WorldSkills Global<br>Competition Lyon 2024 <time class="event-date">10/09/2024
                             </time></h3>
                             <div>
                                 <div class="text-end mb-1 card-price">$50</div>
@@ -150,7 +163,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                             </p>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title mb-1">The Fourvière Nights <time class="event-date">01/06/2025
+                            <h3 class="card-title">The Fourvière Nights <time class="event-date">01/06/2025
                             </time></h3>
 
                             <div>
@@ -191,7 +204,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                             </p>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title mb-1">The European Heritage Days <time class="event-date">21/09/2024
+                            <h3 class="card-title">The European Heritage Days <time class="event-date">21/09/2024
                             </time></h3>
                             <div>
                                 <div class="text-end mb-1 card-price">$50</div>
@@ -203,7 +216,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                     </article>
 
                     <article class="card">
-                        <div class="card-header mb-1-2">
+                        <div class="card-header mb-1">
                             <img src="./assets/events/Chocolate fair - Mondial du Chocolat et du Cacao/19424369.jpg" alt="Image of Chocolate fair - Mondial du Chocolat et du Cacao">
                             <p class="card-description">
                                 Present in the world capital of gastronomy since 2011, the Salon du Chocolat de Lyon is the unmissable event for all chocolate lovers. It exceptionally brings together for 3 days the greatest chocolate makers from the region and from all over France.
@@ -211,7 +224,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                             </p>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title mb-1">Chocolate fair - Mondial du Chocolat et du Cacao <time class="event-date">14/02/2025
+                            <h3 class="card-title">Chocolate fair - Mondial du Chocolat et du Cacao <time class="event-date">14/02/2025
                             </time></h3>
                             <div>
                                 <div class="text-end mb-1 card-price">$50</div>
@@ -231,8 +244,8 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
             <div id="history-wrapper" class="container">
                 <h2 class="text-center mb-3"><span class="highlight-gradient">History</span> and <span class="highlight-gradient">Events</span></h2>
 <!--                timeline of history and culture here-->
-                <div id="timeline">
-                        <article class="timeline-card border-top-right-rounded timeline-card-left">
+                <div id="timeline"  class="observe-slide-from-left">
+                <article class="timeline-card border-top-right-rounded timeline-card-left">
                             <h3 class="mb-1">Ancient Times:</h3>
                             <p>
                                 <div class="mb-1">
@@ -253,7 +266,7 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                                 5th Century:
                             </strong>The Roman Empire falls, and Lyon becomes part of the Frankish kingdom.
                         </div>
-                        <div>
+                        <div class="mb-1">
                             <strong class="highlight-gradient">12th Century: </strong>Lyon emerges as a significant center of trade and banking, with the development of the silk industry.
                         </div>
 
@@ -305,6 +318,182 @@ cultural heritage but also a highly livable environment and a dynamic modern urb
                         </p>
                     </article>
                 </div>
+            </div>
+        </section>
+
+<!--       special food section -->
+        <section aria-label="Special Food in Lyon Section" id="section-food">
+            <div id="food-wrapper" class="container">
+                <h2 class="text-center mb-3"> Special <span class="highlight-gradient">Food</span></h2>
+<!--        Bento box layout-->
+                <div id="foods">
+                    <article class="food-card">
+                        <img src="./assets/food/Bugnes (Angel Wings).jpg" alt="Image of Bugnes (Angel Wings)">
+                        <div class="food-description">
+                            <span class="highlight-gradient">Bugnes (Angel Wings): </span> Bugnes are typically made with a simple dough of flour, eggs, milk, and butter, and are often flavored with lemon zest or orange blossom water. The dough is rolled out, cut into strips, and then twisted into a distinctive "angel wing" shape before being deep-fried until golden brown.
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <img src="./assets/food/Lyonnaise Bistro Cuisine (Cuisine Lyonnaise).jpg" alt="Image of Lyonnaise Bistro Cuisine (Cuisine Lyonnaise)">
+                        <div class="food-description">
+                            <span class="highlight-gradient">Lyonnaise Bistro Cuisine (Cuisine Lyonnaise):  </span> Renowned for its traditional, hearty, and simple dishes, often using fresh local ingredients like pork, beef, vegetables, and herbs.
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <img src="./assets/food/Lyonnaise Cheese (Fromage de Lyon).jpg" alt="Image of Lyonnaise Cheese (Fromage de Lyon)">
+                        <div class="food-description">
+                            <span class="highlight-gradient">Lyonnaise Cheese (Fromage de Lyon): </span> A semi-hard cheese made from milk and whey, boasting a smooth texture and a slightly acidic flavor.
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <img src="./assets/food/Lyonnaise Desserts (Desserts Lyonnais).jpg" alt="Image of Lyonnaise Desserts (Desserts Lyonnais)">
+                        <div class="food-description">
+                            <span class="highlight-gradient">Lyonnaise Desserts (Desserts Lyonnais): </span> Known for their delicate textures and unique flavors, classic Lyonnaise desserts include: Lyonnaise Pudding (Pâté de Pâté) and Lyonnaise Chocolate Cake (Gâteau de Lyon).
+                        </div>
+                    </article>
+                    <article  class="food-card">
+                        <img src="./assets/food/Lyonnaise Salad (Salade Lyonnaise).jpg" alt="Image of ">
+                        <div class="food-description">
+                            <span class="highlight-gradient">Lyonnaise Salad (Salade Lyonnaise): </span> Known for its unique flavor and rich texture, typically containing lettuce, bacon, boiled eggs, onions, and vinaigrette dressing, sometimes with toasted croutons.
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <img src="./assets/food/Lyonnaise Sausage (Saucisson Lyonnais).jpg" alt="Image of Lyonnaise Salad (Salade Lyonnaise)">
+                        <div class="food-description">
+                            <span class="highlight-gradient">Lyonnaise Sausage (Saucisson Lyonnais): </span> A flavorful sausage made from pork, spices, and red wine, known for its rich taste and firm texture, a staple on local tables.
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <img src="./assets/food/Lyonnaise Wines (Vins de Lyon).jpg" alt="Image of Lyonnaise Wines (Vins de Lyon)">
+                        <div class="food-description">
+                            <span class="highlight-gradient">Lyonnaise Wines (Vins de Lyon): </span> Produced in the Rhône Valley, known for its unique terroir and production of various wine styles.
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+<!--        Notable people section-->
+        <section aria-label="Notable People from Lyon Section" id="section-people">
+            <div id="people-wrapper" class="container">
+                <h2 class="text-center mb-3"> Notable <span class="highlight-gradient">People</span></h2>
+
+<!--                list of notable people-->
+                    <article class="people-card people-card-left mb-3">
+                        <img src="./assets/people/Allan Kardec.jpg" alt="Image of Allan Kardec">
+                        <div class="people-card-content">
+                            <h3 class="mb-1">
+                                Allan Kardec
+                            </h3>
+                            <p>
+                                A French educator and writer who is considered the founder of Spiritism, a philosophy and religious movement that emphasizes communication with spirits. He authored the influential book "The Spirits' Book," which outlined the basic principles of Spiritism.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="people-card people-card-right mb-3">
+                        <img src="./assets/people/André Coindre.gif" alt="Image of André Coindre">
+                        <div class="people-card-content">
+                            <h3 class="mb-1">
+                                André Coindre
+                            </h3>
+                            <p>
+                                A French Catholic priest who founded the Congregation of the Missionaries of the Sacred Heart in 1850. He dedicated his life to serving the poor and marginalized, particularly in Latin America.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="people-card people-card-left mb-3">
+                        <img src="./assets/people/Blandina.jpg" alt="Image of Blandina">
+                        <div class="people-card-content">
+                            <h3 class="mb-1">
+                                Blandina
+                            </h3>
+                            <p>
+                                A young Christian from Lyon, endured brutal torture during the Roman persecution but remained steadfast in her faith. Her unwavering commitment made her a powerful symbol of Christian strength and resilience.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="people-card people-card-right mb-3">
+                        <img src="./assets/people/Irenaeus.jpg" alt="Image of André Coindre">
+                        <div class="people-card-content">
+                            <h3 class="mb-1">
+                                Irenaeus
+                            </h3>
+                            <p>
+                                A prominent early Christian theologian and bishop of Lyon in the late 2nd century. He is known for his writings against heresy and his defense of orthodox Christian doctrine, particularly his work "Against Heresies."
+                            </p>
+                        </div>
+                    </article>
+                    <article class="people-card people-card-left mb-3">
+                        <img src="./assets/people/Jean-Baptiste Pompallier.jpg" alt="Image of Jean-Baptiste Pompallier">
+                        <div class="people-card-content">
+                            <h3 class="mb-1">
+                                Jean-Baptiste Pompallier
+                            </h3>
+                            <p>
+                                A French Catholic bishop who served as the first Bishop of Auckland, New Zealand. He played a significant role in the establishment of the Catholic Church in New Zealand and the evangelization of the Māori people.
+                            </p>
+                        </div>
+                    </article>
+
+            </div>
+        </section>
+
+<!--        Looking for help section -->
+        <section aria-label="Looking for help section" id="section-help">
+            <div id="help-wrapper" class="container">
+                <h2 class="text-center mb-3"> Hi, How Can We <span class="highlight-gradient"> Help</span>?</h2>
+
+<!--                list of common questions as links-->
+                <div id="questions" class="mb-3 observe-slide-from-right">
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">What are the essential things to do in Lyon? &rightarrow;</a>
+                    </article>
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">When is the Fête des Lumières held in Lyon? &rightarrow;</a>
+                    </article>
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">Is there are a special pass for visitors to Lyon? &rightarrow;</a>
+                    </article>
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">How to take a guided tour in Lyon? &rightarrow;</a>
+                    </article>
+
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">What are the opening hours of the Lyon Tourist Office? &rightarrow;</a>
+                    </article>
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">What is the best time of year to visit Lyon? &rightarrow;</a>
+                    </article>
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">Where can I find WiFi connections? &rightarrow;</a>
+                    </article>
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">How to get around the city on public transport? &rightarrow;</a>
+                    </article>
+                    <article class="question-card">
+                        <a href="" class="color-neutral-2">Where can I find a Lyonnais ‘bouchon’? &rightarrow;</a>
+                    </article>
+                </div>
+
+<!--                question form-->
+                <form id="form-question" class="d-block mb-4">
+                    <fieldset>
+                        <legend>Send Us Your <span class="highlight-gradient">Questions</span> </legend>
+
+                        <div class="mb-2">
+                            <label for="questions">Questions: </label>
+                            <textarea class="form-control" rows="10" required></textarea>
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="email">Email: </label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                        </div>
+
+                        <button class="btn btn-primary d-block mx-auto w-100">Submit</button>
+                    </fieldset>
+                </form>
+
             </div>
         </section>
     </main>

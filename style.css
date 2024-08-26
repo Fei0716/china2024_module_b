@@ -19,7 +19,11 @@
 
     --primary-gradient: linear-gradient(to right, var(--third-color) , var(--secondary-color));
     --secondary-gradient: linear-gradient(to bottom, var(--third-color) , var(--secondary-color));
+    --third-gradient: linear-gradient(to right, #9f9fff, #ff7e7e);
+    --bg-gradient-bottom: linear-gradient(to bottom, transparent 42%, var(--secondary-color) 400%);
+    --bg-gradient-top: linear-gradient(to top, transparent 42%, var(--third-color) 400%);
 
+    --delay: 0;
 }
 
 /*general styles for html tags*/
@@ -30,6 +34,7 @@ html,button{
 }
 body{
     background-color: var(--primary-color);
+    overflow-x: hidden;
 }
 li{
     list-style: none;
@@ -131,10 +136,56 @@ h3{
     margin:0 auto;
 }
 .highlight-gradient{
-    background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     background-image: var(--primary-gradient);
+    /*use filter instead of backdrop filter in order to create the drop shadow effect*/
+    filter:drop-shadow(2px 2px 0px rgba(255, 255, 255, 1.4));
 }
+.w-100{
+    width: 100%;
+}
+.slideFromRight{
+    animation: slideFromRight 1s ease forwards;
+}
+.observe-slide-from-right > *{
+    opacity: 0;
+}
+
+.observe-slide-from-left > *{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+@keyframes slideFromRight {
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.observe-slide-from-left > *{
+    opacity: 0;
+    transform: translateX(100%);
+}
+.slideFromLeft{
+    animation: slideFromLeft 1s ease forwards;
+}
+@keyframes slideFromLeft {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
 /*header + nav*/
 header{
     position: relative;
@@ -277,20 +328,20 @@ footer{
     position: absolute;
     left: 0;
     top: 0;
-    background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.76));
-    width: 200px;
+    background-image: linear-gradient(to left, transparent 50%, rgba(0, 0, 0, 0.76));
+    width: 250px;
     height: 100%;
-    z-index:2;
+    z-index: 2;
 }
 #hero-wrapper::after{
     content: "";
     position: absolute;
     right: 0;
     top: 0;
-    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.76));
-    width: 200px;
+    background-image: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.76));
+    width: 250px;
     height: 100%;
-    z-index:2;
+    z-index: 2;
 }
 #banner-watermark{
     position: absolute;
@@ -372,6 +423,16 @@ footer{
 }
 
 /*recent events section*/
+#section-event{
+    position: relative;
+}
+#section-event::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:  var(--bg-gradient-bottom);
+    z-index: -1;
+}
 .cards{
     display: flex;
     justify-content: center;
@@ -387,6 +448,8 @@ footer{
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,.4);
     display: flex;
     flex-direction: column;
+    background-color: var(--primary-color);
+
 }
 .card-header{
     position: relative;
@@ -394,7 +457,7 @@ footer{
 }
 .card-header > img{
     width: 100%;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
 }
 .card-header > .card-description{
@@ -405,7 +468,7 @@ footer{
     text-align: justify;
     backdrop-filter: blur(4px);
     background-color: rgba(30, 30, 30, 0.45);
-    font-size: 1rem;
+    font-size: 0.85rem;
     /* leave to   */
     transition: all .2s ease-in;
     transform: translateY(100%);
@@ -454,6 +517,23 @@ footer{
     font-weight: bold;
 }
 /*history and culture section*/
+#section-history{
+    position: relative;
+}
+#section-history::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:  var(--bg-gradient-bottom);
+    z-index: -1;
+}
+#section-history::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:  var(--bg-gradient-top);
+    z-index: -1;
+}
 #timeline{
     position: relative;
     display: grid;
@@ -495,10 +575,301 @@ footer{
     border-bottom-left-radius: 5rem;
 }
 
+/*special food section*/
+#section-food{
+    position: relative;
+}
+/*add gradient effect to the background of the section*/
+#section-food::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:  var(--bg-gradient-bottom);
+    z-index: -1;
+}
+#section-food::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:  var(--bg-gradient-top);
+    z-index: -1;
+}
+#foods{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, minmax(100px,350px));
+    grid-template-rows: repeat(3, minmax(100px,350px));
+    grid-template-areas:
+            "a b c"
+            "a d e"
+            "f f g";
+    gap: 1rem;
+}
+.food-card{
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.food-card:nth-child(1){
+    grid-area: a;
+}
+.food-card:nth-child(2){
+    grid-area: b;
+}
+.food-card:nth-child(3){
+    grid-area: c;
+}
+.food-card:nth-child(4){
+    grid-area: d;
+}
+.food-card:nth-child(5){
+    grid-area: e;
+}
+.food-card:nth-child(6){
+    grid-area: f;
+}
+.food-card:nth-child(7){
+    grid-area: g;
+}
+.food-card > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.food-description{
+    border-radius: 2rem;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    color: var(--neutral-color-4);
+    padding: 2rem;
+    /* leave to   */
+    transition: all .2s ease-in;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.food-description .highlight-gradient{
+    font-size: 1.5rem;
+    font-weight: bold;
+    filter: none;
+    background-image: var(--third-gradient);
+    margin-bottom: .25rem;
+    display: block;
+}
+.food-card:hover > .food-description{
+    /*    enter from*/
+    @starting-style{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    /*    enter active*/
+    transform: translateY(0);
+    opacity: 1;
+    border-radius: 2rem;
+
+}
+
+/*notable people section*/
+#section-people{
+    position: relative;
+}
+#section-people::before{
+    position: absolute;
+    content: "";
+    z-index: -1;
+    inset: 0;
+    background-image: var(--bg-gradient-top);
+}
+#section-people::after{
+    position: absolute;
+    content: "";
+    z-index: -1;
+    inset: 0;
+    background-image: var(--bg-gradient-bottom);
+}
+.people-card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 350px;
+    background-color: var(--neutral-color-4);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,.4);
+
+    /*overflow: hidden;*/
+}
+/*add rotating gradient effect*/
+
+/*custom css property*/
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.people-card::before,.people-card::after{
+    position: absolute;
+    content: "";
+    inset: -5px;
+    background-image: conic-gradient(from var(--angle), transparent,var(--third-color) 20%, var(--secondary-color),transparent 30%);
+    z-index: -2;
+    border-radius: 1rem;
+    animation: rotatingGradient 7s linear infinite var(--delay);
+}
+.people-card::after{
+    filter: blur(5px);
+}
+/*add delay for each of the card for the animation*/
+.people-card:nth-child(1){
+    --delay: 0;
+}
+.people-card:nth-child(2){
+    --delay: -0.5s;
+}
+.people-card:nth-child(3){
+    --delay: -1s;
+}
+.people-card:nth-child(4){
+    --delay: -1.5s;
+}
+.people-card:nth-child(5){
+    --delay: -2s;
+}
+@keyframes rotatingGradient{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+.people-card > img{
+    display: block;
+}
+.people-card-right{
+    flex-direction: row-reverse;
+}
+.people-card-right img{
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.people-card-left img{
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+.people-card-content{
+    padding: 0 1rem;
+}
+.people-card-content p{
+    color: var(--neutral-color-2);
+    margin-bottom: 1rem;
+}
+/*looking for help section*/
+#section-help{
+    position: relative;
+
+}
+#section-help::before{
+    position: absolute;
+    content: "";
+    z-index: -1;
+    inset: 0;
+    background-image: var(--bg-gradient-top);
+}
+#questions{
+    display: grid;
+    grid-template-columns:  repeat(2 , 1fr);
+    gap: 1rem;
+}
+.question-card{
+    background-color: var(--primary-color);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,.4);
+    padding: 1.5rem;
+}
+.question-card a{
+    position: relative;
+    display: block;
+    width: fit-content;
+}
+.question-card a::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all .4s ease;
+    background-image: var(--primary-gradient);
+}
+.question-card a:hover::before{
+    width: 100%;
+
+}
+#form-question{
+    max-width: min(100%, 700px);
+    margin: 0 auto;
+}
+#form-question legend{
+    font-size: 2rem;
+    font-weight: bold;
+}
+#form-question fieldset{
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+#form-question button{
+    border-radius: 0.5rem;!important;
+}
+.form-control{
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid transparent;
+    box-shadow: 1px 1px 3px 2px rgba(0,0,0,.4);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: Inter, "Helvetica Neue", sans-serif;
+}
 /*for responsive and styling for different breakpoints*/
+/*small laptop screen*/
+@media screen and (max-width: 1200px){
+    /*special foods*/
+    #foods {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, minmax(420px, 1fr));
+        grid-template-areas:
+            "a b"
+            "a c"
+            "f c"
+            "f d"
+            "g d"
+            "g e";
+
+    }
+    .food-description{
+        padding:2rem  1rem
+    }
+
+}
 /*tablet*/
 @media screen and (max-width: 768px){
+    .people-card{
+        flex-wrap: wrap;
+        height: max-content;
 
+    }
+    .people-card img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .people-card-right{
+        flex-direction: column;
+    }
+    #questions{
+        display: grid;
+        grid-template-columns:   1fr;
+    }
 }
 /*mobile*/
 @media screen and (max-width: 500px){

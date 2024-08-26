@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const slideLeftBtnDom = document.querySelector('#btn-slide-left');
     const slideRightBtnDom = document.querySelector('#btn-slide-right');
 
+
+
     //states
     let currentSlide = 0;
     let maxSlide = 4;
@@ -41,4 +43,55 @@ document.addEventListener('DOMContentLoaded', function(){
             bannersDom.style.transform = `translateX(calc(-${maxSlide - 1} * ${bannerImageWidth})`;
         }
     }
+
+
+    //setup intersection observer
+    const slideRightObserver = new IntersectionObserver((entries)=>{
+        if(entries[0].intersectionRatio > 0){
+            //apply slide from right animation for the entry element children
+            let children =entries[0].target.querySelectorAll(':scope > *');
+            let delay = 0;
+            children.forEach((el)=>{
+                el.style.animationDelay = `${delay}s`;
+                el.classList.add('slideFromRight');
+                delay += 0.2;
+
+            });
+        }
+
+    });
+
+// Select all elements with the class .observe-slide-from-right
+    const slideRightElements = document.querySelectorAll('.observe-slide-from-right');
+
+// Iterate over the NodeList and observe each element
+    slideRightElements.forEach((element) => {
+        slideRightObserver.observe(element);
+    });
+
+
+
+    //setup intersection observer
+    const slideLeftObserver = new IntersectionObserver((entries)=>{
+        if(entries[0].intersectionRatio > 0){
+            //apply slide from right animation for the entry element children
+            let children =entries[0].target.querySelectorAll(':scope > *');
+            let delay = 0;
+            children.forEach((el)=>{
+                el.style.animationDelay = `${delay}s`;
+                el.classList.add('slideFromLeft');
+                delay += 0.2;
+
+            });
+        }
+
+    });
+    // Select all elements with the class .observe-slide-from-right
+    const slideLeftElements = document.querySelectorAll('.observe-slide-from-left');
+
+// Iterate over the NodeList and observe each element
+    slideLeftElements.forEach((element) => {
+        slideLeftObserver.observe(element);
+    });
+
 });
